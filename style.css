@@ -18,10 +18,10 @@ html {
   font-size: 62.5%;
   --header1: calc(2rem + 1vw);
   --header2: calc(3.5rem + 1vw);
-  --header3: calc(1.5rem + 1vw);
+  --header3: calc(2.4rem + 1vw);
   --header4: calc(1.5rem + 1vw);
   --text: calc(1rem + 1vw);
-  --big: calc(2.4rem + 1vw);
+  --big: calc(6rem + 1vw);
   --special-color: #906272;
   --background-color: #414141;
   --color-text: #525252;
@@ -136,7 +136,7 @@ nav {
   flex: 1 1 40rem;
   background: linear-gradient(#dad8dd, #dad1d4);
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .hero-blue {
@@ -216,17 +216,204 @@ nav {
   display: none;
 }
 
+/* Rose Section */
+.rose {
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.rose-text {
+  background: var(--background-color);
+  flex: 2 1 40rem;
+  justify-content: space-between;
+  color: white;
+}
+
+.rose-text div {
+  padding: 3rem 8rem;
+}
+
+.rose-text h3 {
+  padding: 2rem 0rem;
+  font-weight: 600;
+}
+
+.rose-text h2 {
+  padding: 4rem;
+  font-family: "Pacifico", sans-serif;
+  font-weight: normal;
+}
+
+.rose-image {
+  flex: 1 1 40rem;
+  position: relative;
+  max-height: 100vh;
+}
+
+.rose-image h5 {
+  position: absolute;
+  letter-spacing: 2rem;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -20%);
+}
+
+.rose-image img {
+  height: 1024px;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-height: 100vh;
+  position: relative;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery img:hover {
+  opacity: 0.99;
+}
+
+.gallery1 {
+  grid-column: 1/3;
+}
+
+.gallery2 {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+
+.gallery-head {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  background: var(--background-color);
+  padding: 5rem 10rem;
+  text-align: center;
+  opacity: 0.85;
+}
+
+/* Contact */
+.contact {
+  min-height: 90vh;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-wraper {
+  flex: 3 1 40rem;
+}
+
+.form-wraper h2 {
+  margin: 5rem 0rem;
+}
+
+.form-wraper span {
+  font-size: var(--big);
+  color: var(--special-color);
+}
+.form-wraper label {
+  display: block;
+}
+
+.form-wraper input {
+  display: block;
+  margin: 3rem 0rem;
+  background: var(--background-color);
+  color: white;
+  border: none;
+  padding: 1rem;
+}
+
+.form-wraper button {
+  padding: 1rem 8rem;
+  background: var(--special-color);
+  color: white;
+  border: none;
+  width: 100%;
+}
+.contact-image {
+  flex: 1 1 40rem;
+  overflow: hidden;
+}
+
+.contact-image img {
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  margin: auto;
+  animation: contact-img 6s infinite ease-in-out alternate-reverse 2s;
+  object-fit: cover;
+}
+
+@keyframes contact-img {
+  from {
+    transform: scale(160%);
+  }
+  to {
+    transform: scale(101%);
+  }
+}
+
+.line {
+  display: none;
+}
+
+/* Footer */
+footer {
+  background: var(--background-color);
+  color: white;
+  display: flex;
+  padding: 3rem 1rem 5% 5%;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+footer ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+footer h4 {
+  flex: 3 1 40rem;
+  font-size: calc(1.4rem+1vw);
+}
+
+footer img {
+  max-width: 3rem;
+  margin-left: 4rem;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Media Queries */
 @media screen and (max-width: 1059px) {
   .hero {
     width: 100%;
   }
   .hero-intro p {
     padding: 5rem 1rem;
+    color: var(--color-text);
   }
 
   .hero-images {
     display: flex;
     justify-content: center;
+    z-index: -1;
   }
 
   /* Burger Thing */
@@ -259,6 +446,7 @@ nav {
     flex-direction: column;
     align-items: center;
     transition: transform 0.4s ease;
+    z-index: 0;
   }
 
   .menu-check {
@@ -292,5 +480,57 @@ nav {
 
   .menu-check:checked ~ .burger span:nth-child(2) {
     opacity: 0;
+  }
+
+  /* About Section */
+  .rose-text div {
+    padding: 3rem 3rem;
+  }
+
+  /* Gallery */
+  .gallery img {
+    grid-row: auto;
+    grid-column: auto;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+
+  .gallery-head {
+    width: 100%;
+  }
+
+  /* Line */
+  .line {
+    display: block;
+    height: 2rem;
+    width: 100%;
+    border: none;
+    background: var(--background-color);
+  }
+
+  .contact img {
+    display: none;
+  }
+
+  footer ul {
+    order: 1;
+  }
+  footer h4 {
+    text-align: center;
+    order: 2;
+    padding: 1rem;
+  }
+}
+
+@media screen and (min-width: 1930px) {
+  html {
+    --header1: 3rem;
+    --header2: 5rem;
+    --header3: 4vw;
+    --header4: 3rem;
+    --text: 3rem;
+    --big: 8rem;
   }
 }
