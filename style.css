@@ -286,7 +286,6 @@ nav {
   pointer-events: none;
   flex: 1 1 40rem;
   position: relative;
-  max-height: 100vh;
 }
 
 .rose-image h5 {
