@@ -465,9 +465,12 @@ footer img:hover {
   }
 
   .hero-images {
-    display: flex;
-    justify-content: center;
     z-index: -1;
+  }
+
+  .plant {
+    max-height: none;
+    height: 100%;
   }
 
   /* Burger Thing */
